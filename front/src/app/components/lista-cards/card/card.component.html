@@ -1,0 +1,14 @@
+<div class="card" (click)="goToPage('show')" *ngIf="show" [style.backgroundImage]="'url(' + show.photo + ')'">
+  <div class="bg">
+    <div></div>
+  </div>
+  <div class="conteudo_card">
+    <div class="detalhes">
+      <span class="titulo">{{show.show}}</span>
+      <span class="subtitulo">{{show.nome}}</span>
+    </div>    
+    <div class="generos">
+      <span class="genero">{{show.tipo}}</span>
+    </div>
+  </div>
+</div>

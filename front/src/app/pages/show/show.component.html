@@ -1,0 +1,114 @@
+<app-comprar></app-comprar>
+
+<main>
+  <header>
+    <div class="header">
+      <button (click)="goToPage('home')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+          <path fill="#FFF" fill-rule="evenodd" d="M13.932 16l8.177 7.632c.744.694.744 1.82 0 2.514-.744.694-1.95.694-2.694 0l-9.524-8.889c-.744-.694-.744-1.82 0-2.514l9.524-8.889c.744-.694 1.95-.694 2.694 0s.744 1.82 0 2.514L13.932 16z"/>
+        </svg>      
+        <span>Voltar</span>
+      </button>
+  
+      <img src="assets/profile.png" alt="">
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="conteudo">
+      <div>
+        <h1>Relive - Única apresentação</h1>
+        <div class="bottom">
+          <div class="generos">
+            <span class="genero">Rock'n'Roll</span>
+            <span class="genero">Heavy Metal</span>
+          </div>
+          <h3>Quinta feira, 25 de Abril - 17h</h3>
+          <h4>Rio de Janeiro - Maracanã</h4>
+        </div>
+      </div>
+      <div class="status">
+        <div>
+          <!-- LOCK -->
+          <svg *ngIf="!modaisService.pagamentoModalLiberado" (click)="abrirPagamento()" xmlns="http://www.w3.org/2000/svg" width="59" height="58" viewBox="0 0 59 58">
+            <path fill="#C2C4FF" fill-rule="evenodd" d="M47.444 22.831h-5.569V18.71c0-8.53-4.129-13.543-12.375-13.543S17.125 10.18 17.125 18.71v4.121h-6.188c-1.708 0-3.093 1.907-3.093 3.533v22.964c0 1.62 1.325 3.351 2.944 3.848l3.702 1.137c1.619.497 4.337.904 6.038.904h17.944c1.701 0 4.419-.407 6.038-.904l3.702-1.137c1.619-.497 2.944-2.228 2.944-3.848V26.364c0-1.626-2.003-3.533-3.712-3.533zm-24.132-5.299c0-4.254 2.467-6.477 6.188-6.477 3.721 0 6.188 2.223 6.188 6.477v5.3H23.312v-5.3z"/>
+          </svg>
+          
+          <!-- PLAY -->
+          <svg (click)="goToPage('live')" *ngIf="modaisService.pagamentoModalLiberado" xmlns="http://www.w3.org/2000/svg" width="59" height="58" viewBox="0 0 59 58">
+            <path fill="#FFF" fill-rule="evenodd" d="M50.058 27.166L19.157 8.204c-2.252-1.464-4.095-.387-4.095 2.392v36.808c0 2.778 1.843 3.855 4.095 2.393l30.901-18.962s1.098-.765 1.098-1.835c0-1.07-1.098-1.834-1.098-1.834z"/>
+          </svg>        
+        </div>
+      </div>
+      <div>
+        <button *ngIf="!modaisService.pagamentoModalLiberado" (click)="abrirPagamento()">Comprar por R$5,00</button>
+        <button *ngIf="modaisService.pagamentoModalLiberado" class="comprado">Comprado</button>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+
+    <div class="detalhes">
+      <div class="img"></div>
+      <p class="descricao">
+        Com bastante química e entrosamento, pela amizade e por trabalhos anteriores, em 2019, o guitarrista Gustavo Divetta [Piper, Cristopher Clark], o baixista e vocalista Leo Richter [Twister],  o vocalista Matheus Rocha [Br'oZ] e o baterista Ricky Machado [Gloria], todos com muitos anos de estrada, resolveram unir seus caminhos em um novo projeto.
+        <br><br>
+        Assim surgiu a Relive, uma banda orgânica, com identidade, na qual a música e a sonoridade fluem naturalmente.
+        A banda já é destaque nas principais casas da Grande São Paulo e do interior, pois o público fiel de cada um dos integrantes fez com que a Relive surgisse com ótima aceitação.
+        <br><br>
+        Com muita personalidade, o repertório da Relive, contém grandes hits do pop/rock nacional e internacional, versões próprias que garantem a satisfação do público durante toda a apresentação.
+      </p>
+      <div class="extras">
+        <div class="ingressos">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path fill="#7E7E7E" fill-rule="evenodd" d="M8.052 18.406l5.542 5.542 10.168-10.167-5.542-5.542L8.052 18.406zm22.154-7.61l-2.358-2.359c-.45.245-.964.385-1.51.385-1.745 0-3.16-1.415-3.16-3.159 0-.547.14-1.062.385-1.51l-2.358-2.359c-.615-.614-1.62-.614-2.234 0L1.794 18.971c-.614.614-.614 1.62 0 2.233l2.358 2.359c.45-.245.964-.384 1.511-.384 1.745 0 3.159 1.413 3.159 3.158 0 .547-.14 1.062-.385 1.51l2.358 2.36c.615.613 1.62.613 2.234 0l17.177-17.178c.614-.615.614-1.619 0-2.233zM13.594 26.483l-8.076-8.077L18.22 5.704l8.076 8.076-12.702 12.703z"/>
+            </svg>        
+            <span>10 mil</span>
+          </div>
+          <span>ingressos vendidos</span>
+        </div>
+
+        <div class="tags">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path fill="#7E7E7E" fill-rule="evenodd" d="M10.826 28.496l1.277-6.18h4.953l-1.189 5.755c-.117.568.248 1.123.816 1.24.07.015.14.022.212.022h2.034c.5 0 .93-.35 1.03-.84l1.26-6.177h3.709c.503 0 .935-.357 1.03-.85l.367-1.89c.11-.569-.262-1.12-.832-1.23-.066-.013-.132-.02-.2-.02h-3.265l1.017-4.985h3.636c.502 0 .934-.356 1.03-.849l.362-1.852c.112-.57-.26-1.12-.829-1.232-.066-.013-.134-.02-.201-.02h-3.17l1.117-5.461c.117-.568-.25-1.123-.818-1.239-.07-.014-.14-.021-.21-.021h-2.04c-.498 0-.927.35-1.028.837l-1.22 5.885H14.74l1.102-5.465c.115-.568-.253-1.122-.822-1.237-.068-.013-.137-.02-.207-.02h-2.006c-.497 0-.927.35-1.028.837l-1.22 5.885H7.055c-.502 0-.934.355-1.03.848l-.363 1.852c-.11.57.26 1.121.83 1.232.066.013.133.02.201.02h3.056l-1.017 4.986H5.324c-.503 0-.936.357-1.031.85l-.366 1.89c-.11.569.262 1.12.832 1.23.065.012.132.019.2.019h2.964l-1.16 5.76c-.114.569.254 1.122.822 1.237.069.013.138.02.208.02h2.005c.498 0 .928-.35 1.028-.837zm7.21-9.818h-5.48l1.167-5.67h5.499l-1.187 5.67z"/>
+            </svg>                
+            <span>Tags</span>
+          </div>
+          <div class="tags_container">
+            <span class="tag">#showAoVivo</span>
+            <span class="tag">#e/stage.live</span>
+            <span class="tag">#showAoVivo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="setlist">
+
+      <span class="titulo">Setlist</span>
+
+      <div class="lista">
+        <div class="header">
+          <span>#</span>
+          <span class="nome">Nome</span>
+          <span>Início</span>
+          <span class="duracao">Duração</span>
+        </div>
+
+        <div class="musicas">
+          <div class="musica" *ngFor="let musica of setList; let i = index">
+            <span>{{i}}</span>
+            <span class="nome">{{musica.name}}</span>
+            <span>{{musica.start}}</span>
+            <span class="duracao">{{musica.duration}} min.</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</main>

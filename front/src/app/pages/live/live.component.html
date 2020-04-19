@@ -1,0 +1,133 @@
+<app-chat></app-chat>
+<app-avaliar></app-avaliar>
+<main>
+  <header>
+    <div class="chat_container" *ngIf="chat">
+      <div class="chat">
+        <div class="mensagens">
+
+          <div class="mensagem">
+            <div>
+              <div class="foto" [style.backgroundImage]="'url(https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)'"></div>
+            </div>
+            <div>
+              <span class="nome">Matheus</span>
+              <span class="txt">Amoo essa banda!</span>
+            </div>
+          </div>
+
+          <div class="mensagem">
+            <div>
+              <div class="foto" [style.backgroundImage]="'url(https://images.pexels.com/photos/1499327/pexels-photo-1499327.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)'"></div>
+            </div>
+            <div>
+              <span class="nome">Maria Clara</span>
+              <span class="txt">Parabéns!</span>
+            </div>
+          </div>
+
+          <div class="mensagem">
+            <div>
+              <div class="foto" [style.backgroundImage]="'url(https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)'"></div>
+            </div>
+            <div>
+              <span class="nome">João</span>
+              <span class="txt">Transmissão nota 10</span>
+            </div>
+          </div>
+
+          <div class="mensagem">
+            <div>
+              <div class="foto" [style.backgroundImage]="'url(https://images.pexels.com/photos/1674752/pexels-photo-1674752.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)'"></div>
+            </div>
+            <div>
+              <span class="nome">Ana</span>
+              <span class="txt">Grande iniciativa, parabéns!</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="input" *ngIf="modaisService.chatModalLiberado">
+          <input type="text" placeholder="Comentar...">
+        </div>
+        <div class="trancado" *ngIf="!modaisService.chatModalLiberado">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="#C2C4FF" fill-rule="evenodd" d="M19.457 9.412h-2.314v-1.73C17.143 4.103 15.427 2 12 2 8.573 2 6.857 4.103 6.857 7.682v1.73H4.286c-.71 0-1.286.8-1.286 1.482v9.635c0 .68.55 1.406 1.224 1.615l1.538.477c.673.209 1.802.379 2.51.379h7.457c.707 0 1.836-.17 2.509-.38l1.538-.476c.673-.209 1.224-.935 1.224-1.615v-9.635c0-.682-.833-1.482-1.543-1.482zM9.43 7.188c0-1.785 1.025-2.717 2.571-2.717 1.546 0 2.571.932 2.571 2.717v2.224H9.43V7.188z"/>
+          </svg>        
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <label>
+        <span>Chat</span>
+        <div class="toggle" [ngClass]="{ativo: chat}">
+          <div></div>
+        </div>
+        <input [(ngModel)]="chat" type="checkbox" name="">
+      </label>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path fill="#FFF" fill-rule="evenodd" d="M2 3v2.961c8.858 0 16.039 7.181 16.039 16.039H21C21 11.507 12.493 3 2 3zm0 5.922v2.961c5.587 0 10.117 4.53 10.117 10.117h2.96C15.078 14.777 9.224 8.922 2 8.922zm2.837 7.402C3.271 16.325 2 17.596 2 19.163 2 20.73 3.27 22 4.837 22c1.568 0 2.839-1.27 2.839-2.838 0-1.567-1.271-2.837-2.839-2.837z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path fill="#FFF" fill-rule="evenodd" d="M14.367 14.631V20.4L24 11.544 14.367 3v5.118C2.667 8.118 0 21 0 21c3.311-5.81 8.016-6.369 14.367-6.369z"/>
+        </svg>    
+        <button (click)="avaliar()">Encerrar</button>
+      </div>
+    </div>
+  </header>
+  <iframe class="player" src="https://www.youtube.com/embed/Z6sJ4j_FQnI?controls=0&showinfo=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  <div class="contents">
+    <div class="detalhes">
+      <div class="img"></div>
+      <div class="banda">
+        <h1>Relive - Única apresentação</h1>
+        <div class="generos">
+          <span class="genero">Rock'n'Roll</span>
+          <span class="genero">Heavy Metal</span>
+        </div>
+      </div>
+      <div class="extras">
+        <div class="ingressos">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path fill="#7E7E7E" fill-rule="evenodd" d="M15.333 6.667C4.4 6.667-1.333 14.723-1.333 16c0 1.277 5.732 9.333 16.666 9.333C26.267 25.333 32 17.277 32 16c0-1.277-5.733-9.333-16.667-9.333zm0 16.513c-4.09 0-7.407-3.215-7.407-7.18s3.316-7.18 7.407-7.18c4.092 0 7.408 3.214 7.408 7.18 0 3.966-3.317 7.18-7.408 7.18zm0-7.18c-.678-.745 1.106-3.59 0-3.59-2.045 0-3.703 1.607-3.703 3.59 0 1.983 1.658 3.59 3.703 3.59s3.704-1.607 3.704-3.59c0-.911-3.127.633-3.704 0z"/>
+            </svg>                
+            <span>10 mil</span>
+          </div>
+          <span>pessoas assistindo</span>
+        </div>
+
+        <div class="tags">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <path fill="#7E7E7E" fill-rule="evenodd" d="M10.826 28.496l1.277-6.18h4.953l-1.189 5.755c-.117.568.248 1.123.816 1.24.07.015.14.022.212.022h2.034c.5 0 .93-.35 1.03-.84l1.26-6.177h3.709c.503 0 .935-.357 1.03-.85l.367-1.89c.11-.569-.262-1.12-.832-1.23-.066-.013-.132-.02-.2-.02h-3.265l1.017-4.985h3.636c.502 0 .934-.356 1.03-.849l.362-1.852c.112-.57-.26-1.12-.829-1.232-.066-.013-.134-.02-.201-.02h-3.17l1.117-5.461c.117-.568-.25-1.123-.818-1.239-.07-.014-.14-.021-.21-.021h-2.04c-.498 0-.927.35-1.028.837l-1.22 5.885H14.74l1.102-5.465c.115-.568-.253-1.122-.822-1.237-.068-.013-.137-.02-.207-.02h-2.006c-.497 0-.927.35-1.028.837l-1.22 5.885H7.055c-.502 0-.934.355-1.03.848l-.363 1.852c-.11.57.26 1.121.83 1.232.066.013.133.02.201.02h3.056l-1.017 4.986H5.324c-.503 0-.936.357-1.031.85l-.366 1.89c-.11.569.262 1.12.832 1.23.065.012.132.019.2.019h2.964l-1.16 5.76c-.114.569.254 1.122.822 1.237.069.013.138.02.208.02h2.005c.498 0 .928-.35 1.028-.837zm7.21-9.818h-5.48l1.167-5.67h5.499l-1.187 5.67z"/>
+            </svg>                
+            <span>Tags</span>
+          </div>
+          <div class="tags_container">
+            <span class="tag">#showAoVivo</span>
+            <span class="tag">#e/stage.live</span>
+            <span class="tag">#relive</span>
+            <span class="tag">#rioDeJaneiro</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="doacao">
+        <h2>Doações</h2>
+        <p class="texto">Estamos juntos pelo combate ao Covid-19. Doe e ajude campanhas do Instituto da Criança em todo o Brasil.</p>
+
+        <div class="causas">
+          <div class="causa" *ngFor="let item of [].constructor(3); let i = index">
+            <span class="preco">R${{(i+1) * 5}},00</span>
+            <span class="descricao">Ajude uma causa!</span>
+
+            <button (click)="modaisService.chatModal = true;">Doar</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</main>

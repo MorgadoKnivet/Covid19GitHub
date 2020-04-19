@@ -1,0 +1,127 @@
+<main>
+  <header>
+    <div class="header">
+      <button (click)="goToPage('home')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+          <path fill="#FFF" fill-rule="evenodd" d="M13.932 16l8.177 7.632c.744.694.744 1.82 0 2.514-.744.694-1.95.694-2.694 0l-9.524-8.889c-.744-.694-.744-1.82 0-2.514l9.524-8.889c.744-.694 1.95-.694 2.694 0s.744 1.82 0 2.514L13.932 16z"/>
+        </svg>      
+        <span>Voltar</span>
+      </button>
+  
+      <img src="assets/profile.png" alt="">
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="conteudo">
+      <div>
+        <h1>Relive</h1>
+        <div class="generos">
+          <span class="genero">Rock'n'Roll</span>
+          <span class="genero">Heavy Metal</span>
+        </div>
+      </div>
+      <div>
+        <span class="usuarios">Usuários mensais</span>
+        <span class="count">39.448.000</span>
+        <button *ngIf="!modaisService.seguindo" (click)="modaisService.seguindo = true;">Seguir</button>
+        <button *ngIf="modaisService.seguindo" (click)="modaisService.seguindo = false;" style="background-color: #7e7e7e">Seguindo</button>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+
+    <div class="nav">
+      <div [ngClass]="{ativo: seletor === 0}" (click)="seletor = 0">
+        <span>Shows</span>
+      </div>
+      <div [ngClass]="{ativo: seletor === 1}" (click)="seletor = 1">
+        <span>Resumo</span>
+      </div>
+      <div [ngClass]="{ativo: seletor === 2}" (click)="calcularSlider(); seletor = 2">
+        <span>Fãs também gostam</span>
+      </div>
+    </div>
+
+    <div class="lista" *ngIf="seletor === 0">
+      <app-lista-cards *ngFor="let item of [].constructor(3)"></app-lista-cards>
+    </div>
+
+    <div class="resumo" *ngIf="seletor === 1">
+      <div class="detalhes">
+        <div class="img"></div>
+        <p class="bio">
+          Com bastante química e entrosamento, pela amizade e por trabalhos anteriores, em 2019, o guitarrista Gustavo Divetta [Piper, Cristopher Clark], o baixista e vocalista Leo Richter [Twister],  o vocalista Matheus Rocha [Br'oZ] e o baterista Ricky Machado [Gloria], todos com muitos anos de estrada, resolveram unir seus caminhos em um novo projeto.
+          <br><br>
+          Assim surgiu a Relive, uma banda orgânica, com identidade, na qual a música e a sonoridade fluem naturalmente.
+          A banda já é destaque nas principais casas da Grande São Paulo e do interior, pois o público fiel de cada um dos integrantes fez com que a Relive surgisse com ótima aceitação.
+          <br><br>
+          Com muita personalidade, o repertório da Relive, contém grandes hits do pop/rock nacional e internacional, versões próprias que garantem a satisfação do público durante toda a apresentação.
+        </p>
+        <div class="localizacao">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+            <path fill="#7E7E7E" fill-rule="evenodd" d="M16 0C10.108 0 5.333 4.478 5.333 10 5.333 19.548 16 32 16 32s10.667-12.452 10.667-22C26.667 4.477 21.89 0 16 0zm0 15.52c-3.182 0-5.76-2.418-5.76-5.4s2.578-5.4 5.76-5.4c3.18 0 5.76 2.418 5.76 5.4s-2.58 5.4-5.76 5.4z"/>
+          </svg>
+          <div>
+            <span class="pais">Brasil</span>
+            <span class="cidade">São Paulo</span>
+          </div>
+        </div>
+      </div>
+      <span class="titulo">Integrantes</span>
+
+      <div class="artistas">
+        <div class="artista" *ngFor="let item of [].constructor(4)">
+          <div class="imagem"></div>
+          <p class="nome">Gustavo Divetta</p>
+          <p class="funcao">Guitarrista</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUSCA -->
+    <div *ngIf="seletor === 2">
+      <div class="busca">
+        <div class="resultado">
+          <h2>Artistas / Bandas</h2>
+
+          <div class="artistas">
+
+            <div class="artista" *ngFor="let item of [].constructor(2)" (click)="goToPage('banda')">
+              <div class="imagem"></div>
+              <p class="nome">Gustavo Divetta</p>
+            </div>
+
+          </div>
+          <div class="voltarSlide" (click)="voltarSlideArtistas()" *ngIf="page !== 0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="#FFF" fill-rule="evenodd" d="M13.551 12L7.418 6.276c-.557-.52-.557-1.365 0-1.885.558-.521 1.463-.521 2.02 0l7.144 6.666c.557.52.557 1.365 0 1.886l-7.143 6.666c-.558.521-1.463.521-2.02 0-.558-.52-.558-1.364 0-1.885L13.55 12z"/>
+            </svg>  
+          </div>
+          <div class="proximoSlide" (click)="proximoSlideArtistas()" *ngIf="page !== pageCount">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="#FFF" fill-rule="evenodd" d="M13.551 12L7.418 6.276c-.557-.52-.557-1.365 0-1.885.558-.521 1.463-.521 2.02 0l7.144 6.666c.557.52.557 1.365 0 1.886l-7.143 6.666c-.558.521-1.463.521-2.02 0-.558-.52-.558-1.364 0-1.885L13.55 12z"/>
+            </svg>  
+          </div>
+
+          <h2 class="shows_title">Shows</h2>
+
+          <div class="shows">
+
+            <div class="show" *ngFor="let show of escolhidos" (click)="goToPage('show')" [style.backgroundImage]="'url(' + show.photo + ')'">
+              <div class="bg"></div>
+              <div class="conteudo_card">
+                <div class="detalhes">
+                  <span class="titulo">{{show.show}}</span>
+                  <span class="subtitulo">{{show.nome}}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>

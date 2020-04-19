@@ -1,0 +1,245 @@
+@import "src/app/colors";
+
+main{
+  background-color: $pretos-black;
+
+  grid-template-rows: max-content auto;
+
+  min-height: 100vh;
+}
+
+header{
+  height: 94px;
+  grid-template-columns: auto auto 8px;
+  svg{
+    align-self: end;
+    margin-left: 53px;
+    margin-top: 34px;
+  }
+  button{
+    align-self: end;
+    justify-self: end;
+    margin-right: 48px;
+    width: 140px;
+    height: 48px;
+    margin-left: 138px;
+    border-radius: 4px;
+    border: solid 1.5px $color-roxo;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #4347f2;
+
+    &:hover{
+      border: solid 1.5px $brancos-white;
+      color: $brancos-white;
+    }
+  }
+}
+
+.form{
+  justify-self: center;
+  align-self: center;
+
+  position: relative;
+  bottom: 51px;
+
+  h1{
+    margin: 0px;
+    font-size: 44px;
+    font-weight: bold;
+    text-align: center;
+    color: $brancos-white;
+  }
+  h2{
+    margin: 0px;
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    color: $brancos-grey-1;
+  }
+  h3{
+    margin: 0px;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: $brancos-grey-1;
+    margin-bottom: 20px;
+  }
+
+  .etapas{
+    gap: 13px;
+  }
+
+  button{
+    width: 372px;
+    height: 48px;
+
+    margin-top: 33px;
+
+    border-radius: 4px;
+    background-color: $pretos-grey-1;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #BDBDBD;
+
+    &.ativo{
+      background-color: $color-roxo;
+      color: $brancos-white;
+      &:hover{
+        background-color: #292B9E;
+      }
+    }
+  }
+
+  .botoes{
+    grid-template-columns: 1fr 1fr;
+
+    button{
+      width: 126px;
+    }
+    :first-child{
+      border-radius: 4px;
+  
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      border: solid 1.5px $brancos-white;
+      color: $brancos-white;
+      background-color: transparent;
+    }
+    :last-child{
+      justify-self: end;
+    }
+  }
+}
+
+.progresso{
+  width: 100vw;
+  height: 8px;
+  background-color: $pretos-grey-1;
+  > div{
+    height: 8px;
+    width: 50vw;
+    background-color: $color-roxo;
+
+    transition: .4s all ease-in-out;
+
+    &.completo{
+      width: 100vw;
+    }
+  }
+}
+
+.input_container{
+  width: 372px;
+  height: 74px;
+
+  label{
+    width: 372px;
+    height: 56px;
+    border-radius: 8px;
+    background-color: $pretos-grey-1;
+
+    align-items: center;
+    align-content: center;
+
+    grid-template-columns: 48px 0px auto;
+
+    cursor: text;
+
+    &:focus-within{
+      border-bottom: 1px solid $color-roxo;
+      .label{
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.2px;
+
+        color: $color-roxo;
+
+        transform: translateY(-12px);
+      }
+      svg path{
+        fill: $color-roxo;
+      }
+      input{
+        color: $brancos-white;
+        transform: translateY(7px);
+      }
+    }
+
+    &.resting{
+      .label{
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.2px;
+
+        transform: translateY(-12px);
+      }
+      input{
+        color: $brancos-white !important;
+        transform: translateY(7px);
+      }
+    }
+
+    input{
+      justify-self: start;
+      width: 232px;
+      border: none;
+      outline: none;
+      align-self: center;
+      
+      font-size: 16px;
+      line-height: 1.13;
+      letter-spacing: 0.25px;
+      color: #7b7b7b;
+
+      transition: .15s transform ease-in-out;
+      background-color: transparent;
+      background-image: none !important;
+      color: rgb(0, 0, 0) !important;
+    }
+    svg{
+      margin: 0px;
+      justify-self: center;
+      align-self: center;
+
+      path{
+        fill: #BDBDBD;
+      }
+    }
+    .label{
+      align-self: center;
+      font-size: 16px;
+      line-height: 1.13;
+      letter-spacing: 0.25px;
+      color: #7b7b7b;
+
+      transition: .15s transform ease-in-out;
+
+      width: inherit;
+    }
+  }
+  .error{
+    display: none;
+    &.falha{
+      display: grid !important;
+      span{
+        margin-left: 16px;
+        margin-top: 4px;
+  
+        font-size: 12px;
+        font-weight: normal;
+  
+        line-height: 1.17;
+        letter-spacing: 0.2px;
+        color: #FF4747;
+      }
+    }
+  }
+}

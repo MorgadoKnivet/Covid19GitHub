@@ -1,0 +1,22 @@
+<div class="lista" [id]="listaId">
+  <p *ngIf="tipo === 0">Shows <b>{{tipoTexto}}</b></p>
+  <p *ngIf="tipo === 1">Espetáculos <b>{{tipoTexto}}</b></p>
+  <p *ngIf="tipo === 2"><b>Descobertas da semana</b></p>
+  <p *ngIf="tipo === 3"><b>Descobertas da semana</b></p>
+  <div class="cards">
+
+    <app-card *ngIf="tipo === 0 && subtipo === 0" [show]='fixo'></app-card>
+    <app-card *ngFor="let show of escolhidos" [show]='show'></app-card>
+
+  </div>
+  <div class="voltarSlide" (click)="voltarSlide()" *ngIf="page !== 0">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path fill="#FFF" fill-rule="evenodd" d="M13.551 12L7.418 6.276c-.557-.52-.557-1.365 0-1.885.558-.521 1.463-.521 2.02 0l7.144 6.666c.557.52.557 1.365 0 1.886l-7.143 6.666c-.558.521-1.463.521-2.02 0-.558-.52-.558-1.364 0-1.885L13.55 12z"/>
+    </svg>  
+  </div>
+  <div class="proximoSlide" (click)="proximoSlide()" *ngIf="page !== pageCount">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path fill="#FFF" fill-rule="evenodd" d="M13.551 12L7.418 6.276c-.557-.52-.557-1.365 0-1.885.558-.521 1.463-.521 2.02 0l7.144 6.666c.557.52.557 1.365 0 1.886l-7.143 6.666c-.558.521-1.463.521-2.02 0-.558-.52-.558-1.364 0-1.885L13.55 12z"/>
+    </svg>  
+  </div>
+</div>

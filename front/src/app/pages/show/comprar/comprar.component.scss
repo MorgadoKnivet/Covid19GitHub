@@ -1,0 +1,88 @@
+@import "src/app/colors";
+
+.container{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1000;
+  .bg{
+    width: 100vw;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background-color: rgba(61, 61, 61, 0.8);
+
+    justify-self: center;
+    justify-items: center;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    .modal{
+      width: 476px;
+      border-radius: 8px;
+      background-color: $pretos-black;
+
+      svg{
+        margin-top: 16px;
+        margin-right: 20px;
+        justify-self: end;
+        cursor: pointer;
+      }
+
+      h1{
+        margin: 0px;
+        padding: 0px;
+        margin-top: 4px;
+        margin-left: 32px;
+        margin-right: 32px;
+        font-size: 32px;
+        font-weight: bold;
+        color: $brancos-white;
+      }
+      p{
+        margin: 0px;
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 32px;
+        margin-right: 32px;
+        font-size: 16px;
+        font-weight: normal;
+        color: $brancos-grey-1;
+      }
+      .botoes{
+        margin-top: 148px;
+        gap: 24px;
+        justify-items: end;
+        justify-self: end;
+
+        margin-right: 32px;
+        margin-bottom: 40px;
+
+        grid-template-columns: max-content max-content;
+        :first-child{
+          width: 118px;
+          height: 48px;
+
+          font-size: 16px;
+          font-weight: bold;
+          letter-spacing: 0.5px;
+          text-align: center;
+          color: $brancos-white;
+        }
+        :last-child{
+          width: 178px;
+          height: 48px;
+          border-radius: 4px;
+          background-color: $color-roxo;
+
+          font-size: 16px;
+          font-weight: bold;
+          letter-spacing: 0.5px;
+          text-align: center;
+          color: $brancos-white;
+        }
+      }
+    }
+  }
+}

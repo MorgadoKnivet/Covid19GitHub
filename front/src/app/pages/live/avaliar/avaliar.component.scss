@@ -1,0 +1,111 @@
+@import "src/app/colors";
+
+.container{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1000;
+  .bg{
+    width: 100vw;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background-color: rgba(61, 61, 61, 0.8);
+
+    justify-self: center;
+    justify-items: center;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    .modal{
+      width: 476px;
+      border-radius: 8px;
+      background-color: $pretos-black;
+
+      svg{
+        margin-top: 16px;
+        margin-right: 20px;
+        justify-self: end;
+        cursor: pointer;
+      }
+
+      h1{
+        margin: 0px;
+        padding: 0px;
+        margin-top: 4px;
+        margin-left: 32px;
+        margin-right: 32px;
+        font-size: 40px;
+        font-weight: bold;
+        color: $brancos-white;
+      }
+      p{
+        margin: 0px;
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 32px;
+        margin-right: 32px;
+        font-size: 16px;
+        font-weight: normal;
+        color: $brancos-grey-1;
+        margin-bottom: 44px;
+      }
+      .notas{
+        margin-left: 32px;
+        margin-right: 32px;
+        gap: 36px;
+        .nota{
+          > span{
+            font-size: 24px;
+            font-weight: 300;
+            color: $brancos-white;
+            margin-bottom: 16px;
+          }
+          .avaliacao{
+            grid-template-columns: auto 50px;
+            .stars{
+              grid-template-columns: repeat(5, 48px);
+              gap: 8px;
+
+              svg{
+                margin: 0px;
+              }
+            }
+            > span{
+              align-self: center;
+              font-size: 16px;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: normal;
+              font-weight: normal;
+              letter-spacing: normal;
+              color: $brancos-grey-1;
+              b{
+                font-size: 30px;
+                font-weight: bold;
+                color: $color-roxo;
+                display: contents;
+              }
+            }
+          }
+        }
+      }
+      button{
+        justify-self: center;
+        margin-bottom: 40px;
+        margin-top: 69px;
+        width: 412px;
+        height: 48px;
+        border-radius: 4px;
+        background-color: $color-roxo;
+
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        text-align: center;
+        color: $brancos-white;
+      }
+    }
+  }
+}

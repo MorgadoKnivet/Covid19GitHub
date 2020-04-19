@@ -1,0 +1,21 @@
+<div class="container" *ngIf="modaisService.chatModal">
+  <div class="bg">
+    <div class="modal">
+      <svg (click)="modaisService.chatModal = false;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="#7E7E7E" fill-rule="evenodd" d="M16.61 5.41c.547-.547 1.433-.547 1.98 0 .547.547.547 1.433 0 1.98L13.979 12l4.61 4.61c.548.547.548 1.433 0 1.98-.546.547-1.432.547-1.979 0L12 13.979l-4.61 4.61c-.513.514-1.324.546-1.874.097l-.106-.096c-.547-.547-.547-1.433 0-1.98L10.021 12l-4.61-4.61c-.548-.547-.548-1.433 0-1.98.546-.547 1.432-.547 1.979 0L12 10.021z"/>
+      </svg>
+      <h1>Quer falar com seu ídolo?</h1>
+      <p>
+        Aqui na e/stage. nós queremos que você e seu ídolo interajam da melhor forma possível. Por isso, criamos um chat, ao vivo, aonde você pode se comunicar com ele!
+        <br>
+        Só pedimos uma pequena doação para comunidades carentes. Vamos ajudar?
+      </p>
+      <div class="causa">
+        <span class="preco">R$5,00</span>
+        <span class="descricao">Ajude uma causa!</span>
+
+        <button (click)="modaisService.chatModalLiberado = true; modaisService.chatModal = false;">Doar</button>
+      </div>
+    </div>
+  </div>
+</div>

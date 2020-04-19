@@ -1,0 +1,109 @@
+@import "src/app/colors";
+
+.lista{
+  > p{
+    margin: 0px;
+    margin-bottom: 32px;
+    padding: 0px;
+    padding-left: 52px;
+    font-size: 32px;
+    font-weight: 300;
+    color: $brancos-white;
+
+    overflow-x: hidden;
+    max-width: 100%;
+    b{
+      display: contents;
+      font-weight: bold;
+    }
+  }
+  .cards{
+    padding-left: 52px;
+    gap: 20px;
+
+    grid-auto-flow: column;
+
+    overflow-x: hidden;
+    max-width: 100%;
+
+    grid-auto-columns: max-content;
+
+    :last-child{
+      padding-right: 52px;
+    }
+  }
+  .proximoSlide{
+    height: 0px;
+    width: 100%;
+
+    cursor: pointer;
+    svg{
+      position: relative;
+      bottom: calc(220px + (24px / 2) + (220px/2));
+      z-index: 10;
+      left: calc(100% - 24px - 24px);
+
+      transition: .35s ease-in-out all;
+    }
+    &::before{
+      content: '';
+      width: 93px;
+      height: 220px;
+      background-image: linear-gradient(to right, rgba(23, 23, 23, 0.0) 9%, rgba(6, 6, 6, 0.72) 70%, #000000 100%);
+
+      transition: .35s ease-in-out all;
+
+      position: relative;
+      bottom: 220px;
+      z-index: 10;
+      left: calc(100% - 93px);
+    }
+
+    &:hover{
+      svg{
+        transform: scale(2);
+      }
+      &::before{
+        background-image: linear-gradient(to right, rgba(23, 23, 23, 0) 9%, rgba(6, 6, 6, 0.85) 70%, #000000 100%);
+      }
+    }
+  }
+  .voltarSlide{
+    height: 0px;
+    width: 100%;
+
+    cursor: pointer;
+    svg{
+      position: relative;
+      bottom: calc(220px + (24px / 2) + (220px/2));
+      z-index: 10;
+      left: 24px;
+
+      transform: rotate(180deg) scale(1);
+
+      transition: .35s ease-in-out all;
+    }
+    &::before{
+      content: '';
+      width: 93px;
+      height: 220px;
+      background-image: linear-gradient(to left, rgba(23, 23, 23, 0.0) 9%, rgba(6, 6, 6, 0.72) 70%, #000000 100%);
+
+      transition: .35s ease-in-out all;
+
+      position: relative;
+      bottom: 220px;
+      z-index: 10;
+      left: 0px;
+    }
+
+    &:hover{
+      svg{
+        transform: rotate(180deg) scale(2);
+      }
+      &::before{
+        background-image: linear-gradient(to left, rgba(23, 23, 23, 0) 9%, rgba(6, 6, 6, 0.85) 70%, #000000 100%);
+      }
+    }
+  }
+}

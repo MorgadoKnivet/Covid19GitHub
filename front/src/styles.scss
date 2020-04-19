@@ -1,0 +1,119 @@
+@import "src/app/colors";
+
+/** Ultra Light */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 100;
+  src: url('assets/fonts/SF-Pro-Display-Ultralight.otf');
+}
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 200;
+  src: url('assets/fonts/SF-Pro-Display-Light.otf');
+}
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 300;
+  src: url('assets/fonts/SF-Pro-Display-Thin.otf');
+}
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: normal;
+  src: url('assets/fonts/SF-Pro-Display-Regular.otf');
+}
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 500;
+  src: url('assets/fonts/SF-Pro-Display-Medium.otf');
+}
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 600;
+  src: url('assets/fonts/SF-Pro-Display-Semibold.otf');
+}
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: bold;
+  src: url('assets/fonts/SF-Pro-Display-Bold.otf');
+}
+
+h1 { font-weight: 700; }
+h2 { font-weight: 600; }
+h3 { font-weight: 500; }
+p { font-weight: 400; }
+
+* {
+  font-family: 'San Francisco', sans-serif;
+}
+
+body{
+  margin: 0px;
+  min-height: 100vh;
+  *{
+    display: grid;
+    grid-auto-rows: max-content;
+  }
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-transition-property: background-color !important;
+  -webkit-box-shadow: 0 0 0px 1000px $pretos-grey-1 inset !important;
+  -webkit-text-fill-color: $brancos-white;
+  -webkit-transition-delay: 99999s;
+}
+
+*::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.0);
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.0);
+  &.removeScrollbar{
+    -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.0);
+  }
+}
+
+*::-webkit-scrollbar{
+  width: 6px;
+  height: 6px;
+  position: relative;
+  right: 4px;
+  background-color: rgba(0,0,0,0.0);
+  &.removeScrollbar{
+    width: 0px;
+    height: 0px;
+  }
+}
+
+*::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.0);
+  background-color: $color-roxo;
+  &.removeScrollbar{
+    -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.0);
+    background-color: rgba(0,0,0,0);
+  }
+}

@@ -1,0 +1,416 @@
+@import "src/app/colors";
+
+main{
+  background-color: $pretos-black;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+header{
+  height: 0px;
+  width: 100vw;
+
+  z-index: 100;
+  .header{
+    height: 100px;
+    width: 100vw;
+
+    grid-template-columns: auto auto;
+
+    button{
+      display: flex;
+
+      margin-top: 44px;
+      margin-left: 52px;
+      
+      align-items: center;
+      align-content: center;
+
+      height: 32px;
+
+      grid-template-columns: 32px auto;
+
+      span{
+        margin-left: 10px;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.25;
+        letter-spacing: 0.3px;
+        color: #d6d6d6;
+
+        justify-self: start;
+      }
+    }
+    img{
+      margin-top: 44px;
+      margin-right: 52px;
+
+      width: 40px;
+      height: 40px;
+
+      justify-self: end;
+    }
+  }
+}
+
+.hero{
+  background-image: url('https://instagram.fgig4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/66377988_150935769425255_6195839102496895431_n.jpg?_nc_ht=instagram.fgig4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=zk8yfvp69x0AX8dlYIt&oh=d85ba9b97f08e666e9c133189c2a475d&oe=5EC4C383');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 73vh;
+
+  &.teatro{
+    background-image: url('https://s3.amazonaws.com/ogden_images/www.dailypress.net/images/2018/06/05133426/2017-Missoula-Gullivers-Travels-1100x733.jpg');
+  }
+
+  &::before{
+    content: '';
+    height: 73vh;
+    background-image: linear-gradient(to bottom, #000000 0%, rgba(106, 106, 106, 0) 66%, rgba(33, 33, 33, 0.31) 80%, rgba(33, 33, 33, 0.9) 90%, rgba(33, 33, 33, 1));
+  }
+
+  .conteudo{
+    position: relative;
+    bottom: calc(73vh - 100px);
+    margin-left: 52px;
+    margin-right: 52px;
+    height: calc(73vh - 100px);
+    grid-template-columns: 1fr 153px 1fr;
+
+    grid-template-rows: auto;
+
+    .status{
+      align-self: center;
+      align-items: center;
+      align-content: center;
+
+      position: relative;
+      bottom: 50px;
+      > div{
+        width: 104px;
+        height: 104px;
+        // -webkit-backdrop-filter: blur(4px);
+        // backdrop-filter: blur(4px);
+        // background-color: rgba(71, 75, 255, 0.7);
+        background-color: rgba(71, 75, 255, 1);
+
+        border-radius: 1000px;
+
+        align-self: center;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+        justify-self: center;
+
+        cursor: pointer;
+      }
+    }
+
+    > :first-child{
+      grid-template-rows: 160px auto;
+
+      h1{
+        margin: 0px;
+        margin-top: 32px;
+
+        font-size: 44px;
+        font-weight: bold;
+        color: $brancos-white;
+      }
+      .bottom{
+        align-self: end;
+        grid-template-columns: auto;
+        margin-bottom: 72px;
+        :last-child{
+          margin-right: 52px;
+          justify-self: end;
+          align-self: end;
+
+          button{
+            width: 116px;
+            height: 48px;
+            border-radius: 4px;
+            background-color: $color-roxo;
+
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-align: center;
+            color: $brancos-white;
+
+            &:hover{
+              background-color: #292B9E;
+            }
+          }
+        }
+        .generos{
+          display: block;
+          .genero{
+            float: left;
+  
+            height: 40px;
+            border-radius: 24px;
+            background-color: $pretos-grey-1;
+  
+            align-content: center;
+  
+            padding-left: 16px;
+            padding-right: 16px;
+            margin-right: 14px;
+  
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            color: $brancos-white;
+            align-self: center;
+          }
+        }
+        h3{
+          margin: 0px;
+          margin-top: 12px;
+          font-weight: normal;
+          font-size: 24px;
+          color: $brancos-white;
+        }
+        h4{
+          margin: 0px;
+          margin-top: 4px;
+          font-size: 24px;
+          font-weight: normal;
+          color: $brancos-white;
+          justify-self: start !important;
+        }
+      }
+    }
+
+    > :last-child{
+      align-self: end;
+      margin-bottom: 72px;
+      span{
+        font-size: 14px;
+        font-weight: normal;
+        letter-spacing: 0.8px;
+        text-align: right;
+        color: $brancos-grey-2;
+      }
+      .count{
+        margin-top: 5px;
+        font-weight: bold;
+      }
+      button{
+        justify-self: end;
+        height: 48px;
+
+        border-radius: 4px;
+        background-color: $color-roxo;
+
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        text-align: center;
+        color: $brancos-white;
+
+        padding-left: 24px;
+        padding-right: 24px;
+
+        &.comprado{
+          background-color: $brancos-grey-2;
+        }
+      }
+    }
+
+  }
+}
+
+.content{
+  margin-right: 52px;
+  margin-left: 52px;
+  .detalhes{
+    grid-template-columns: 120px 520px auto;
+    margin-bottom: 62px;
+    .img{
+      width: 120px;
+      height: 120px;
+      box-shadow: 4px 7px 10px 5px rgba(0, 0, 0, 0.12);
+      border-radius: 1000px;
+
+      background-image: url('https://instagram.fgig4-1.fna.fbcdn.net/v/t51.2885-19/s150x150/59786630_2151473398240146_5344286948112465920_n.jpg?_nc_ht=instagram.fgig4-1.fna.fbcdn.net&_nc_ohc=iBPSKa6g7cEAX-Od2h7&oh=c2eedad4267f8dd3f960ad3c20166b2f&oe=5EC4F884');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .descricao{
+      margin: 0px;
+      padding: 0px;
+      margin-left: 24px;
+
+      font-size: 14px;
+      font-weight: normal;
+      letter-spacing: 0.8px;
+      color: $brancos-white;
+      width: 496px;
+    }
+    .extras{
+      gap: 4px;
+      align-items: center;
+      align-content: center;
+      align-self: start;
+
+      .ingressos{
+        justify-self: end;
+        > :first-child{
+          justify-content: left;
+          justify-items: left;
+
+          grid-template-columns: 32px auto;
+          svg{
+
+          }
+          > span{
+            font-size: 24px;
+            font-weight: bold;
+            color: $brancos-white;
+            margin-left: 12px;
+          }
+        }
+        > span {
+          font-size: 14px;
+          font-weight: normal;
+          color: $brancos-grey-1;
+        }
+      }
+
+      .tags{
+        margin-top: 33px;
+        justify-self: end;
+        > :first-child{
+          justify-content: left;
+          justify-items: left;
+
+          justify-self: end;
+
+          grid-template-columns: 32px auto;
+          svg{
+
+          }
+          > span{
+            font-size: 24px;
+            font-weight: bold;
+            color: $brancos-white;
+            margin-left: 12px;
+          }
+        }
+        .tags_container {
+          margin-top: 22px;
+          font-size: 14px;
+          font-weight: normal;
+          color: $brancos-grey-1;
+          display: block;
+          .tag{
+            float: right;
+            height: 30px;
+            background-color: $pretos-grey-1;
+
+            align-content: center;
+
+            padding-left: 12px;
+            padding-right: 12px;
+
+            margin-left: 8px;
+            margin-bottom: 8px;
+
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.38px;
+            text-align: center;
+            color: $brancos-white;
+
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .setlist{
+    margin-top: 24px;
+
+    .titulo{
+      font-size: 32px;
+      font-weight: 300;
+      color: $brancos-white;
+    }
+
+    .lista{
+      margin-top: 24px;
+      .header{
+        grid-template-columns: 74px auto 59px 189px;
+
+        border-bottom: 1px solid $brancos-grey-2;
+        > span{
+          font-size: 24px;
+          font-weight: bold;
+          color: $brancos-white;
+
+          padding-bottom: 12px;
+
+          align-self: end;
+          justify-self: end;
+        }
+        :first-child{
+          // margin-left: 58px;
+          margin-left: 24px;
+          justify-self: start;
+        }
+        .nome{
+          justify-self: start;
+          margin-left: 52px;
+        }
+        .duracao{
+          margin-left: 72px;
+          margin-right: 24px;
+        }
+      }
+      .musicas{
+        > :last-child{
+          margin-bottom: 67px;
+        }
+        .musica{
+          width: 100%;
+          margin-top: 24px;
+          grid-template-columns: 74px 1fr 59px 189px;
+          
+          font-size: 16px;
+          color: $brancos-white;
+
+          padding-bottom: 12px;
+
+          align-self: end;
+          align-content: center;
+          justify-content: end;
+          justify-self: end;
+
+          > span {
+            justify-self: end;
+          }
+          :first-child{
+            // margin-left: 58px;
+            margin-left: 24px;
+            justify-self: start;
+          }
+          .nome{
+            justify-self: start;
+            margin-left: 52px;
+          }
+          .duracao{
+            margin-left: 72px;
+            margin-right: 24px;
+          }
+        }
+      }
+    }
+  }
+}

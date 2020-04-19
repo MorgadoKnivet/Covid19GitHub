@@ -1,0 +1,15 @@
+<div class="container" *ngIf="modaisService.comprarModal">
+  <div class="bg">
+    <div class="modal">
+      <svg (click)="modaisService.comprarModal = false;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="#7E7E7E" fill-rule="evenodd" d="M16.61 5.41c.547-.547 1.433-.547 1.98 0 .547.547.547 1.433 0 1.98L13.979 12l4.61 4.61c.548.547.548 1.433 0 1.98-.546.547-1.432.547-1.979 0L12 13.979l-4.61 4.61c-.513.514-1.324.546-1.874.097l-.106-.096c-.547-.547-.547-1.433 0-1.98L10.021 12l-4.61-4.61c-.548-.547-.548-1.433 0-1.98.546-.547 1.432-.547 1.979 0L12 10.021z"/>
+      </svg>
+      <h1>Pagamento</h1>
+      <p>O pagamento é realizado pela plataforma do Sympla, aonde você consegue comprar todos os ingressos que vendemos aqui na plataforma.</p>
+      <div class="botoes">
+        <button (click)="modaisService.comprarModal = false;">Cancelar</button>
+        <button (click)="eventoPago()">Pagar no Sympla</button>
+      </div>
+    </div>
+  </div>
+</div>

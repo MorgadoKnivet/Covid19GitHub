@@ -1,0 +1,81 @@
+@import "src/app/colors";
+
+.card{
+  width: 320px;
+  height: 220px;
+  align-content: end;
+
+  border-radius: 8px;
+  box-shadow: 4px 7px 10px 5px rgba(0, 0, 0, 0.12);
+  background-color: $brancos-white;
+
+  cursor: pointer;
+  transition: .35s all ease-in-out;
+
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:hover{
+    &::after{
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .bg::after{
+      transform: scale(1.225);
+    }
+  }
+  &::after{
+    content: '';
+    height: 220px;
+    background-image: linear-gradient(to bottom, #000000 0%, rgba(106, 106, 106, 0.15) 66%, rgba(0, 0, 0, 0.31) 80%, rgba(0, 0, 0, 0.9) 92%, rgba(0,0,0,0.9));
+    border-radius: 8px;
+    transition: .35s background ease-in-out;
+
+    z-index: 3;
+  }
+
+  .conteudo_card{
+    align-self: end;
+    margin-bottom: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    position: relative;
+    top: 220px;
+
+    z-index: 4;
+    .titulo{
+      padding: 0px;
+      margin: 0px;
+      font-size: 16px;
+      font-weight: bold;
+      color: $brancos-white;
+    }
+    .subtitulo{
+      padding: 0px;
+      margin: 0px;
+      margin-top: 1px;
+      font-size: 14px;
+      font-weight: normal;
+      color: $brancos-white;
+    }
+    .genero{
+      align-self: end;
+      align-content: center;
+      justify-self: end;
+      padding: 7.5px;
+      padding-left: 16px;
+      padding-right: 16px;
+
+      border-radius: 24px;
+      background-color: $pretos-grey-1;
+
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.38px;
+      color: $brancos-white;
+    }
+  }
+}

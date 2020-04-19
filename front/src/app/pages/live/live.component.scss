@@ -1,0 +1,417 @@
+@import "src/app/colors";
+
+main{
+  min-height: 100vh;
+  background-color: $pretos-black;
+
+  overflow-x: hidden;
+  header{
+    height: 0px;
+    width: 100vw;
+
+    z-index: 100;
+    .container{
+      z-index: 3;
+      *{
+        align-items: center;
+        align-content: center;
+        align-self: center;
+      }
+      grid-template-columns: 1fr 1fr;
+      label{
+        grid-template-columns: max-content max-content;
+        margin-left: 52px;
+        margin-top: 44px;
+        > span{
+          font-size: 24px;
+          font-weight: bold;
+          line-height: 0.83;
+          letter-spacing: 0.45px;
+          color: $brancos-white;
+        }
+        .toggle{
+          margin-left: 24px;
+  
+          width: 34px;
+          height: 14px;
+          border-radius: 7px;
+          background-color: $brancos-grey-1;
+  
+          transition: .25s all ease-in-out;
+  
+          cursor: pointer;
+          &.ativo{
+            background-color: $color-roxo;
+            > div{
+              transform: translateX(15px);
+            }
+          }
+          > div{
+            width: 19px;
+            height: 20px;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
+            background-color: $brancos-white;
+  
+            transition: .25s all ease-in-out;
+          }
+        }
+        input{
+          display: none;
+        }
+      }
+      > div{
+        gap: 32px;
+        grid-template-columns: 24px 24px 135px;
+        justify-self: end;
+        margin-right: 52px;
+        svg{
+          margin-top: 44px;
+        }
+        :last-child{
+          margin-top: 28px;
+          margin-left: 20px;
+  
+          width: 115px;
+          height: 48px;
+          border-radius: 4px;
+          border: solid 1.5px $brancos-white;
+  
+          font-size: 16px;
+          font-weight: bold;
+          letter-spacing: 0.5px;
+          color: $brancos-grey-1;
+  
+          &:hover{
+            background-color: $brancos-white;
+            color: #212121;
+          }
+        }
+      }
+    }
+    &::after{
+      content: '';
+      width: 100vw;
+      height: 74vh;
+      transform: rotate(-180deg);
+      background-image: linear-gradient(to bottom, rgba(62, 62, 62, 0) 40%, #000000);
+      z-index: 2;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      pointer-events: none;
+    }
+  }
+  .player{
+    width: 100%;
+    height: 74vh;
+  }
+}
+
+.contents{
+  margin-top: 42px;
+  .detalhes{
+    margin-left: 52px;
+    margin-right: 52px;
+    grid-template-columns: 86px 520px auto;
+    margin-bottom: 62px;
+    .banda{
+      margin-left: 24px;
+      h1{
+        margin: 0px;
+        margin-bottom: 12px;
+
+        font-size: 32px;
+        font-weight: bold;
+        color: $brancos-white;
+      }
+      .generos{
+        display: block;
+        .genero{
+          float: left;
+
+          height: 40px;
+          border-radius: 24px;
+          background-color: $pretos-grey-1;
+
+          align-content: center;
+
+          padding-left: 16px;
+          padding-right: 16px;
+          margin-right: 14px;
+
+          font-size: 16px;
+          font-weight: bold;
+          letter-spacing: 0.5px;
+          color: $brancos-white;
+          align-self: center;
+        }
+      }
+    }
+    .img{
+      width: 86px;
+      height: 86px;
+      box-shadow: 4px 7px 10px 5px rgba(0, 0, 0, 0.12);
+      border-radius: 1000px;
+
+      background-image: url('https://instagram.fgig4-1.fna.fbcdn.net/v/t51.2885-19/s150x150/59786630_2151473398240146_5344286948112465920_n.jpg?_nc_ht=instagram.fgig4-1.fna.fbcdn.net&_nc_ohc=iBPSKa6g7cEAX-Od2h7&oh=c2eedad4267f8dd3f960ad3c20166b2f&oe=5EC4F884');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .extras{
+      gap: 4px;
+      align-items: center;
+      align-content: center;
+      align-self: start;
+
+      .ingressos{
+        justify-self: end;
+        > :first-child{
+          justify-content: left;
+          justify-items: left;
+
+          grid-template-columns: 32px auto;
+          svg{
+
+          }
+          > span{
+            font-size: 24px;
+            font-weight: bold;
+            color: $brancos-white;
+            margin-left: 12px;
+          }
+        }
+        > span {
+          font-size: 14px;
+          font-weight: normal;
+          color: $brancos-grey-1;
+        }
+      }
+
+      .tags{
+        margin-top: 33px;
+        justify-self: end;
+        > :first-child{
+          justify-content: left;
+          justify-items: left;
+
+          justify-self: end;
+
+          grid-template-columns: 32px auto;
+          svg{
+
+          }
+          > span{
+            font-size: 24px;
+            font-weight: bold;
+            color: $brancos-white;
+            margin-left: 12px;
+          }
+        }
+        .tags_container {
+          margin-top: 22px;
+          font-size: 14px;
+          font-weight: normal;
+          color: $brancos-grey-1;
+          display: block;
+          .tag{
+            float: right;
+            height: 30px;
+            background-color: $pretos-grey-1;
+
+            align-content: center;
+
+            padding-left: 12px;
+            padding-right: 12px;
+
+            margin-left: 8px;
+            margin-bottom: 8px;
+
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.38px;
+            text-align: center;
+            color: $brancos-white;
+
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .doacao{
+    margin-left: 52px;
+    margin-right: 52px;
+    margin-bottom: 31px;
+    position: relative;
+    bottom: 10px;
+
+    h2{
+      margin: 0px;
+      padding: 0px;
+
+      font-size: 32px;
+      font-weight: 300;
+      color: $brancos-white;
+    }
+    p{
+      margin: 0px;
+      padding: 0px;
+      margin-top: 12px;
+
+      width: 496px;
+      
+      font-size: 14px;
+      font-weight: normal;
+      letter-spacing: 0.8px;
+      color: $brancos-white;
+
+      margin-bottom: 24px;
+    }
+    .causas{
+      grid-template-columns: repeat(3, 280px);
+      gap: 24px;
+      .causa{
+        width: 280px;
+        height: 200px;
+        border-radius: 8px;
+        border: solid 1.5px $color-roxo;
+
+        *{
+          justify-self: center;
+        }
+
+        .preco{
+          margin-top: 16px;
+
+          font-size: 32px;
+          font-weight: bold;
+          text-align: center;
+          color: $color-roxo;
+        }
+        .descricao{
+          margin-top: 8px;
+
+          font-size: 20px;
+          font-weight: bold;
+          text-align: center;
+          color: $brancos-white;
+        }
+        button{
+          margin-top: 43px;
+
+          width: 232px;
+          height: 48px;
+          border-radius: 4px;
+          background-color: $color-roxo;
+
+          font-size: 16px;
+          font-weight: bold;
+          letter-spacing: 0.5px;
+          text-align: center;
+          color: $brancos-white;
+        }
+      }
+    }
+  }
+}
+
+.chat_container{
+  width: 0px;
+  height: 0px;
+  z-index: 10;
+  *{
+    z-index: 10;
+  }
+  .chat{
+    height: 74vh;
+    width: 231px;
+    position: absolute;
+    top: 105px;
+    left: 51px;
+    .mensagens{
+      height: calc(74vh - 64px - 105px - 103px);
+      align-content: end;
+
+      overflow-y: auto;
+      max-height: calc(74vh - 64px - 105px - 103px);
+      display: block;
+      .mensagem{
+        margin-top: 16px;
+        gap: 10px;
+        grid-template-columns: 30px auto;
+        > :first-child{
+          .foto{
+            width: 30px;
+            height: 30px;
+            box-shadow: 4px 7px 10px 5px rgba(0, 0, 0, 0.12);
+
+            background-image: url('https://instagram.fgig4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/89342620_2581758685476950_4672014670331855858_n.jpg?_nc_ht=instagram.fgig4-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=XhlTQo1C5IMAX8p1Fsg&oh=2e2013c4b927796e9aa517f7aeee6417&oe=5EC57BE8');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            border-radius: 1000px;
+          }
+        }
+        > :last-child{
+          .nome{
+            font-size: 12px;
+            font-weight: bold;
+            color: $brancos-grey-1;
+          }
+          .txt{
+            font-size: 12px;
+            font-weight: normal;
+            color: $brancos-white;
+          }
+        }
+      }
+    }
+    .input{
+      margin-top: 24px;
+      width: 231px;
+      height: 40px;
+      border-radius: 8px;
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      border: solid 1.5px $brancos-white;
+      background-color: rgba(255, 255, 255, 0.1);
+
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      justify-items: center;
+      input{
+        width: calc(231px - 32px);
+        height: 18px;
+        font-family: SFProDisplay;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.29;
+        letter-spacing: 0.22px;
+        color: $brancos-white;
+
+        &::placeholder {
+          color: $brancos-white !important;
+        }
+      }
+    }
+    .trancado{
+      margin-top: 24px;
+      width: 231px;
+      height: 40px;
+      border-radius: 8px;
+      border: solid 1.5px $color-roxo;
+      background-color: $color-roxo;
+
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      justify-items: center;
+    }
+  }
+}
